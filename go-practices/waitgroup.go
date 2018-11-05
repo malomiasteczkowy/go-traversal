@@ -29,8 +29,10 @@ func main(){
 	wg.Wait()
 
 	// no more values will be placed int channel
+	// but only sender should close the channel !!!
+	// ... but 'range' operator reads from channel untils the channel IS CLOSED
+	// so 'close' is needed here anyway
 	close(respond)
-
 	for queryResponse := range respond {
 		fmt.Printf("got response:\t %s\n", queryResponse)
 	}
