@@ -30,7 +30,7 @@ func printStat(s *Stat){
 			fmt.Printf("[%d]: %2d\n", i, v)	
 		}
 	}
-	fmt.Printf("other: %d\n", s.other)
+	fmt.Printf("Other: %d\n", s.other)
 }
 
 /* thread safe - using sync/atomic */
